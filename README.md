@@ -24,7 +24,7 @@ _**Fig.2 NYS zipcodes' negative birth outcomes**, interactive map + bar chart + 
 ----
 
 # Data
-_Data that were in used can be found in this GitHub repo under [data folder](https://github.com/danachermesh/Food_Deserts_ML/tree/master/data)_
+_Data that were in used can be found in the [ML project GitHub repo under data folder](https://github.com/danachermesh/Food_Deserts_ML/tree/master/data)_
 
 _Birth Outcome Variables Data_
 Two adverse birth outcomes were considered: preterm birth and low birthweight. Data on these outcomes were collected from New York State Department of Health at the zip code level.
