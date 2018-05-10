@@ -54,7 +54,7 @@ The final deliverable is seperated to:
 1. Interactive Map + bar chart of Premature Birth and Low Birth Weight % by NYS zipcodes: https://bl.ocks.org/ep2247/raw/1d5e937a9425e80170b81822f43207ea/
   - code to generate interactive map + bar chart (_use JSX (React)_): https://jsbin.com/ditukub/edit?js,output
 2. Parallel Coordinate Chart showing the variables used to predict Premature Birth and Low Birth Weight (_see [birth.html](https://github.com/ep2247/Data__Vis_FinalProject/blob/master/birth.html) file in this repo): https://output.jsbin.com/lupohif
-  - code to generate parallel visualization only: https://jsbin.com/lazagot/edit?js,output
+  - code to generate parallel visualization only: https://jsbin.com/lupohif/edit?js,output
 
 
 
