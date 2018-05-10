@@ -45,6 +45,9 @@ Identifying if certain variables are important in determining negative birth out
 - D3.js, React
 - Python pandas to clean and merge the origional datasets ([link to the Ipython notebook](https://github.com/danachermesh/Food_Deserts_ML/blob/master/FoodDeserts.BirthOutcomes_ML_analysis.ipynb))
 
+# Limitations
+The objective was to combine the two visualizations into one, as showed in _fig.1_ and _fig.2_, and to link the map to the parallel coordinates chart so when highlighting zipcodes in the parallel chart, the same zipcodes will be highlighted on the map as well and vise versa. Unfortunately, we were unable to do so; therefore, the two parts of our visualized data and results are shown here as two seperate visualizations. 
+
 # Visualization + Code
 The final deliverable is seperated to:
 
