@@ -2,7 +2,7 @@
 #### Final Project for Data Visualization, NYU CUSP, Spring 2018
 Prof. Huy Vo
 
-# Group Members:
+### Group Members:
 Dana Chermesh Reshef (dcr346@nyu.edu)
 Emily Padvorac (ep2247@nyu.edu)
 
@@ -37,6 +37,7 @@ At the beginning of research, a dataset containing variables on food deserts was
   - **Health insurance coverage** 
   - **Vehicle Access**
   - **SNAP (Food Stamp) Benefits**
+  - **Urban / Rural**
 A variable of **teen birth rate** was also considered, and was retrieved from the NYS Department of Health data. Additionally, each zip code was classified as either urban or rural, using classifications as defined by the US Census Bureau.
 
 ## Final datasets used for visualizations:
@@ -48,16 +49,20 @@ https://raw.githubusercontent.com/OpenDataDE/State-zip-code-GeoJSON/master/ny_ne
 
 3. _Parallel visualisation data_: https://raw.githubusercontent.com/ep2247/Data__Vis_FinalProject/master/FinalDataChart2.csv
 
-
-# How does the visualization help users
-Identifying if certain variables are important in determining negative birth outcomes can help decide what policy levers to pull or what demographic groups to focus intervention programs on. These findings are applicable to New York government at both the state and local level, and would be most relevant to the Department of Health. The two visualizations highlight the different relationships between different demographic, social and spatial variables and their impact on negative birth outcomes, make these results and insights accessable to policy makers, as well as for non-professionals.
-
 # Visualization tools used
 - D3.js, React
 - Python pandas to clean and merge the origional datasets ([link to the Ipython notebook](https://github.com/danachermesh/Food_Deserts_ML/blob/master/FoodDeserts.BirthOutcomes_ML_analysis.ipynb))
 
-# Limitations
+# Visualization choices
+- **Interactive Map of all zipcodes**: Map is the natural choice for viewing spatial data and interactions. The map colors each zipcode on the range of % of selected negative birth outcome from total births in that zipcode. The map is being updated according to mousehovering over the two birth outcomes analyzed. 
+- **Bar chart to switch birth outcome zipcodes map**: The bar chart shows the average % of Premature birth and Low birth weight for all zipcodes in New York State. Hovering on each of the two birth outcomes will update the map to view the % for each zipcode, and will also update the legend of the map according to the choice.
+- **Parallel Coordinate Chart of variables predicting Premature Birth and Low Birth Weight**: Parallel coordinates are used for analyzing multivariate data; this was the most appropriate way to efficiently view the relationships between the different demographic, social and spatial parameters were in use to build our ML model of predicting negative birth outcomes. Each line of the chart represents a zipcode; the line path is determined by the zipcode's characteristics of the variables analyzed. The chart is interactive and allows filtering the highlighted zipcodes according to the user's selection of one or more variables' range.
+
+# Limitations of our visualization
 The objective was to combine the two visualizations into one, as showed in _fig.1_ and _fig.2_, and to link the map to the parallel coordinates chart so when highlighting zipcodes in the parallel chart, the same zipcodes will be highlighted on the map as well and vise versa. Unfortunately, we were unable to do so; therefore, the two parts of our visualized data and results are shown here as two seperate visualizations. 
+
+# How does the visualization help users
+Identifying if certain variables are important in determining negative birth outcomes can help decide what policy levers to pull or what demographic groups to focus intervention programs on. These findings are applicable to New York government at both the state and local level, and would be most relevant to the Department of Health. The two visualizations highlight the different relationships between different demographic, social and spatial variables and their impact on negative birth outcomes, make these results and insights accessable to policy makers, as well as for non-professionals.
 
 # Visualization + Code
 The final deliverable is seperated to:
