@@ -28,6 +28,11 @@ The outcome of this project is an interactive visualization that shows negative 
 
 # Link to the visualization
 
+- New York State Map showing Premature Birth and Low Birth Weight
+https://bl.ocks.org/ep2247/raw/7886e2126498960dbfee632e59118076/
+
+-Parallel Coordinate Chart showing the variables used to predict Premature Birth and Low Birth Weight
+
 # Visualization tools used
 - D3.js, React
 -Python pandas to clean and merge the origional datasets
