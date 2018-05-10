@@ -16,8 +16,12 @@ The deliverable of this DataVis project is an interactive visualization that sho
 ![byBirth1.png](byBirth1.png) 
 _**Fig.1 NYS zipcodes' negative birth outcomes**, interactive map + bar chart + parallel vis of predicting variables; The figure shows mousehover on one of the variables to update the map_
 
+---
+
 ![byBirth2.png](byBirth2.png) 
 _**Fig.2 NYS zipcodes' negative birth outcomes**, interactive map + bar chart + parallel vis of predicting variables; The figure shows selections of ranges of variables in the parallel vis, the relevant zipcodes are highlighted_
+
+----
 
 # Data
 _Data that were in used can be found in this GitHub repo under [data folder](https://github.com/danachermesh/Food_Deserts_ML/tree/master/data)_
