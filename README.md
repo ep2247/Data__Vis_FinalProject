@@ -7,11 +7,11 @@ Dana Chermesh Reshef (dcr346@nyu.edu)
 Emily Padvorac (ep2247@nyu.edu)
 
 # Project Discription and Objective
-This visualisation is an enhancement of an analysis that had been conducted as a part of Machine Learning for cities class, NYU CUSP Spring 2018. The research identified the important factors impacting low birthweight and preterm births for New York State on the zip code level, using random forests and Bayesian network approaches. This research seeks to understand to what extent living in a food desert may have on birth outcomes. In recent years, the topic of food deserts has become increasingly popular. In short, a food desert is an area that has low-access to healthy, nutritious food.
+This visualization is an enhancement of an analysis that had been conducted as a part of Machine Learning for cities class, NYU CUSP Spring 2018. The research identified the important factors impacting low birthweight and preterm births for New York State on the zip code level, using random forests and Bayesian network approaches. This research seeks to understand to what extent living in a food desert may have on birth outcomes. In recent years, the topic of food deserts has become increasingly popular. In short, a food desert is an area that has low-access to healthy, nutritious food.
 
-- _[Full report](https://github.com/danachermesh/Food_Deserts_ML/blob/master/FoodDesertBirthOutcomes_FinalPaper.pdf)_
+- _[Full report: ML Food Deserts and Birth Outcomes](https://github.com/danachermesh/Food_Deserts_ML/blob/master/FoodDesertBirthOutcomes_FinalPaper.pdf)_
 
-The deliverable of this DataVis project is an interactive visualization that shows the share of the two negative birth outcomes out of total births for years 2012-2014 in New York State, analysed by zipcodes. The visualization also shows each zipcode's parameters that were found as impactful for predicting birth outcomes.
+The deliverable of this DataVis project is an interactive visualization that shows the share of the two negative birth outcomes out of total births for years 2012-2014 in New York State, analyzed by zipcodes. The visualization also shows each zipcode's parameters that were found as impactful for predicting birth outcomes.
 
 ![byBirth1.png](byBirth1.png) 
 _**Fig.1 NYS zipcodes' negative birth outcomes**, interactive map + bar chart + parallel vis of predicting variables; The figure shows mousehover on one of the variables to update the map_
@@ -25,7 +25,7 @@ _**Fig.2 NYS zipcodes' negative birth outcomes**, interactive map + bar chart + 
 
 # Data
 ## Data used for analysis:
-_Data that were in used can be found in the [ML project GitHub repo under data folder](https://github.com/danachermesh/Food_Deserts_ML/tree/master/data)_
+_Data used can be found in the [ML project GitHub repo under data folder](https://github.com/danachermesh/Food_Deserts_ML/tree/master/data)_
 
 _Birth Outcome Variables Data_
 Two adverse birth outcomes were considered: preterm birth and low birthweight. Data on these outcomes were collected from New York State Department of Health at the zip code level.
@@ -47,7 +47,7 @@ https://raw.githubusercontent.com/OpenDataDE/State-zip-code-GeoJSON/master/ny_ne
 
 2. _Map+Chart visualization data_: https://raw.githubusercontent.com/danachermesh/Food_Deserts_ML/master/data/dataBirth1.json
 
-3. _Parallel visualisation data_: https://raw.githubusercontent.com/ep2247/Data__Vis_FinalProject/master/FinalDataChart2.csv
+3. _Parallel visualization data_: https://raw.githubusercontent.com/ep2247/Data__Vis_FinalProject/master/FinalDataChart2.csv
 
 # Visualization tools used
 - D3.js, React
@@ -55,7 +55,9 @@ https://raw.githubusercontent.com/OpenDataDE/State-zip-code-GeoJSON/master/ny_ne
 
 # Visualization choices
 - **Interactive Map of all zipcodes**: Map is the natural choice for viewing spatial data and interactions. The map colors each zipcode on the range of % of selected negative birth outcome from total births in that zipcode. The map is being updated according to mousehovering over the two birth outcomes analyzed. 
+
 - **Bar chart to switch birth outcome zipcodes map**: The bar chart shows the average % of Premature birth and Low birth weight for all zipcodes in New York State. Hovering on each of the two birth outcomes will update the map to view the % for each zipcode, and will also update the legend of the map according to the choice.
+
 - **Parallel Coordinate Chart of variables predicting Premature Birth and Low Birth Weight**: Parallel coordinates are used for analyzing multivariate data; this was the most appropriate way to efficiently view the relationships between the different demographic, social and spatial parameters were in use to build our ML model of predicting negative birth outcomes. Each line of the chart represents a zipcode; the line path is determined by the zipcode's characteristics of the variables analyzed. The chart is interactive and allows filtering the highlighted zipcodes according to the user's selection of one or more variables' range.
 
 # Limitations of our visualization
