@@ -41,7 +41,6 @@
     <body>
         <script src="https://d3js.org/d3.v4.js"></script>
         <script>
-// variables for creating the parallel coordinates
 
 var margin = {top: 100, right: 10, bottom: 10, left: 50},
 width = 800 - margin.left - margin.right,
@@ -64,23 +63,18 @@ var svg = d3.select("body").append("svg")
         .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-//turn all of the variables into floats
 var makeFloat = function(v){return (parseFloat(v) == v) || (v == "")};
 
-//create colors used for the parallel coordinate lines
 var color = d3.scaleOrdinal(["#FFAACC","#FFAADD","#FFAAEE","#FFAAFF","#CCAAFF","#CCAAEE","#CCAADD","#CCAACC","#CCBBCC","#CCBBDD","#CCBBEE","#CCBBFF","#FFBBFF","#FFBBEE","#FFBBDD","#FFBBCC","#CCCCCC","#CCCCDD","#CCCCEE","#CCCCFF","#FFCCFF","#FFCCEE","#FFCCDD","#FFCCCC","#FFDDCC","#FFDDDD","#FFDDEE","#FFDDFF","#CCDDFF","#CCDDEE","#CCDDDD","#CCDDCC","#CCEECC","#CCEEDD","#CCEEFF"])
 
-//load in the csv data
 d3.csv("https://raw.githubusercontent.com/ep2247/Data__Vis_FinalProject/master/FinalDataChart2.csv", function(error, birth) {
 
        dimensions = d3.keys(birth[0]).filter(function(d) {
-                                             //filter out the zipcodes so they do not show up as a variable in the parallel coordinate graph
                                              return d != "zipcode"
                                              });
        x.domain(dimensions);
        
        dimensions.forEach(function(d) {
-                          //get all of the variables excpet zipcode
                           var vals = birth.map(function(p) {return p[d];});
                           if (vals.every(makeFloat)){
                           y[d] = d3.scaleLinear()
@@ -97,7 +91,7 @@ d3.csv("https://raw.githubusercontent.com/ep2247/Data__Vis_FinalProject/master/F
        
        extents = dimensions.map(function(p) { return [0,0]; });
        
-       // Add grey background lines when you click and highlight only certain lines
+       // Add grey background lines for context.
        background = svg.append("g")
        .attr("class", "background")
        .selectAll("path")
@@ -105,7 +99,7 @@ d3.csv("https://raw.githubusercontent.com/ep2247/Data__Vis_FinalProject/master/F
        .enter().append("path")
        .attr("d", path);
        
-       // Add color to the zipcode lines
+       // Add blue foreground lines for focus.
        foreground = svg.append("g")
        .attr("class", "foreground")
        .selectAll("path")
@@ -114,7 +108,7 @@ d3.csv("https://raw.githubusercontent.com/ep2247/Data__Vis_FinalProject/master/F
        .style("stroke", d => color(d.zipcode))
        .attr("d", path);
        
-       // Add elements for dragging and selecting lines
+       // Add a group element for each dimension.
        var g = svg.selectAll(".dimension")
        .data(dimensions)
        .enter().append("g")
@@ -144,11 +138,11 @@ d3.csv("https://raw.githubusercontent.com/ep2247/Data__Vis_FinalProject/master/F
                  .duration(0)
                  .attr("visibility", null);
                  }));
-       
-       // Add an axis and title for each of the variables.
+       // Add an axis and title.
        g.append("g")
        .attr("class", "axis")
        .each(function(d) {  d3.select(this).call(d3.axisLeft(y[d]));})
+       //text does not show up because previous line breaks somehow
        .append("text")
        .attr("fill", "black")
        .style("text-anchor", "middle")
@@ -175,7 +169,7 @@ d3.csv("https://raw.githubusercontent.com/ep2247/Data__Vis_FinalProject/master/F
             return g.transition().duration(500);
         }
         
-        // Returns the path for zipcode lines
+        // Returns the path for a given data point.
         function path(d) {
             return line(dimensions.map(function(p) { return [position(p), y[p](d[p])]; }));
         }
@@ -185,7 +179,7 @@ d3.csv("https://raw.githubusercontent.com/ep2247/Data__Vis_FinalProject/master/F
         }
         
         
-        // Brush and display the lines selected from the axis
+        // Handles a brush event, toggling the display of foreground lines.
         function brush_parallel_chart() {
             for(var i=0;i<dimensions.length;++i){
                 if(d3.event.target==y[dimensions[i]].brush) {
